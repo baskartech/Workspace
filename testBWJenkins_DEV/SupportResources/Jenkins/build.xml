@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="APPName_DEV" basedir="." default="deployEar">
+<project name="testBWJenkins_DEV" basedir="." default="deployEar">
 
-    <property name="projectName" value="APPName_DEV"/>
- <property name="Application.Name" value="APPName"/>
+    <property name="projectName" value="testBWJenkins_DEV"/>
+ <property name="Application.Name" value="testBWJenkins"/>
 
 <!--Continous Integration Widows server properties-->
-    <property name="DeploymnetFiles.dir" value="E:\ProgramFiles\Jenkins\workspace\${projectName}\DeploymentFiles"/>
+    <property name="DeploymnetFiles.dir" value="G:\CI\Jenkins\Workspace\${projectName}\DeploymentFiles"/>
     <property name="jar.dir" value="../lib"/>
-    <property name="tibco.tra.home" value="C:\tibco\tra\5.7\bin"/>
-	<property name="tibco.BuildEar.path" value="C:\tibco\tra\5.7\bin\buildear.exe"/>
-	<property name="tibco.AppManage.path" value="C:\tibco\tra\5.7\bin\AppManage.exe"/>
+    <property name="tibco.tra.home" value="G:\tibco\tra\5.8\bin"/>
+	<property name="tibco.BuildEar.path" value="G:\tibco\tra\5.8\bin\buildear.exe"/>
+	<property name="tibco.AppManage.path" value="G:\tibco\tra\5.8\bin\AppManage.exe"/>
 
-	<property name="Archive.path" value="/Deployment/${Application.Name}.archive"/>	
-	<property name="Remote.App.path" value="E:\ProgramFiles\Jenkins\workspace\${projectName}\${Application.Name}"/>
-     <property name="Remote.EAR.Path" value="E:\ProgramFiles\Jenkins\workspace\${projectName}\DeploymentFiles\${Application.Name}.ear"/>
- 	<property name="Exported.XML.Path" value="E:\ProgramFiles\Jenkins\workspace\${projectName}\DeploymentFiles\${Application.Name}_Exported.xml"/>
-	<property name="EMSScript.Path" value="E:\ProgramFiles\Jenkins\workspace\${projectName}\SupportResources\EMSScript\CreateScript.txt"/>
+	<property name="Archive.path" value="/archive/${Application.Name}.archive"/>	
+	<property name="Remote.App.path" value="G:\CI\Jenkins\Workspace\${projectName}\${Application.Name}"/>
+     <property name="Remote.EAR.Path" value="G:\CI\Jenkins\Workspace\${projectName}\DeploymentFiles\${Application.Name}.ear"/>
+ 	<property name="Exported.XML.Path" value="G:\CI\Jenkins\Workspace\${projectName}\DeploymentFiles\${Application.Name}_Exported.xml"/>
+	<property name="EMSScript.Path" value="G:\CI\Jenkins\Workspace\${projectName}\SupportResources\EMSScript\CreateScript.txt"/>
 
-	<property name="DTL.Property.Path" value="E:\ProgramFiles\Jenkins\workspace\DTL\BuildEar_DTL.Properties.txt"/>
+	<property name="DTL.Property.Path" value="G:\CI\Jenkins\Workspace\DTL\BuildEar_DTL.Properties.txt"/>
 	
 
 	<!-- you need to update the Name based of Env Name-->
-        <property name="Updated.xml.Path" value="E:\ProgramFiles\Jenkins\workspace\${projectName}\DeploymentFiles\${projectName}.xml"/>
+        <property name="Updated.xml.Path" value="G:\CI\Jenkins\Workspace\${projectName}\DeploymentFiles\${projectName}.xml"/>
 
 	<!-- you need to update the Name based of Env Name-->
-	<property name="propertyFile.Name" value="E:\ProgramFiles\Jenkins\workspace\${projectName}\SupportResources\Jenkins\DEV.properties"/>
+	<property name="propertyFile.Name" value="G:\CI\Jenkins\Workspace\${projectName}\SupportResources\Jenkins\DEV.properties"/>
 
 
 
 
 
 <!--TIBCO Admin Domain properties-->
-  <property name="tibco.domain" value="TIB_DEV"/>
-  <property name="tibco.admin.user" value="username "/>
-  <property name="tibco.admin.password" value="password"/>
+  <property name="tibco.domain" value="tib_dev"/>
+  <property name="tibco.admin.user" value="admin"/>
+  <property name="tibco.admin.password" value="admin"/>
 	
 <!-- The Deployment grouping Folder -->
    <property name="tibco.admin.dir" value="${Application.Name}/${Application.Name}"/>
@@ -60,7 +60,7 @@
 
 	 <property name="Application.EMS.Script" value="/Application_mw/App/${Application.Name}/DeploymentFiles/EMSScript/CreateScript.txt"/>
 	 
-	 <property name="Remote.SoapVAlidation.path" value="E:\ProgramFiles\Jenkins\workspace\${projectName}\SupportResources\Jenkins\SoapVAlidation.txt"/>
+	 <property name="Remote.SoapVAlidation.path" value="G:\CI\Jenkins\Workspace\${projectName}\SupportResources\Jenkins\SoapVAlidation.txt"/>
 	
 		
 	 <property name="EMSConnectionURL" value="tcp://localhost:8111"/>  
@@ -217,7 +217,7 @@
     url="jdbc:oracle:thin:@localhost:1521/TIBCOD"
     userid="user"
     password="password" 
-    src="E:\ProgramFiles\Jenkins\workspace\APP_DEV\SupportResources\DBScript\test.sql" />
+    src="G:\CI\Jenkins\Workspace\APP_DEV\SupportResources\DBScript\test.sql" />
   </target> 
 
 <!--some times CreateDeployment Prerequisites is optional and you need only to put depends="CopyDeploymentFilestoRemoteMachine -->
