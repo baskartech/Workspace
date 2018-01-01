@@ -1,0 +1,7 @@
+-Before starting the Application you need to add the below lines in the application .tra
+
+	1-# Removes the validation on the output from the SOAPREQUESTREPLY process
+	java.property.com.tibco.plugin.soap.SOAPSendReceiveActivity.NoOutputValidation=true
+
+        2- kindly make sure that you put this file in this location and give the file full permission
+

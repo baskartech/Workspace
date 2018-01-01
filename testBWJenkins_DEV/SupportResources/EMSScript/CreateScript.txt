@@ -1,0 +1,2 @@
+create queue EXCEPTION
+create queue LOGGING
