@@ -13,7 +13,7 @@
 
 	<property name="Archive.path" value="/archive/${Application.Name}.archive"/>	
 	<property name="Remote.App.path" value="G:\CI\Jenkins\Workspace\${projectName}\${Application.Name}"/>
-     <property name="Remote.EAR.Path" value="G:\CI\Jenkins\Workspace\${projectName}\DeploymentFiles\${Application.Name}.ear"/>
+    <property name="Remote.EAR.Path" value="G:\CI\Jenkins\Workspace\${projectName}\DeploymentFiles\${Application.Name}.ear"/>
  	<property name="Exported.XML.Path" value="G:\CI\Jenkins\Workspace\${projectName}\DeploymentFiles\${Application.Name}_Exported.xml"/>
 	<property name="EMSScript.Path" value="G:\CI\Jenkins\Workspace\${projectName}\SupportResources\EMSScript\CreateScript.txt"/>
 
@@ -101,7 +101,7 @@
 	   <arg value="-p"/>   <arg value="${Remote.App.path}"/>
 	    <arg value="-o"/>   <arg value="${Remote.EAR.Path}"/> 
 	   <arg value="-ear"/> <arg value="${Archive.path}"/> 
-	<arg value="-a"/> <arg value="${DTL.Property.Path}"/> 
+	<!--<arg value="-a"/> <arg value="${DTL.Property.Path}"/>  -->
   	</exec> 
     </target>
 
